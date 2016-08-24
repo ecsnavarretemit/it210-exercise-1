@@ -1,0 +1,30 @@
+{
+  "name": "it.210.exercise.1.build",
+  "version": "1.0.0",
+  "description": "IT 210 Exercise 1",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "it210",
+    "up",
+    "uplb",
+    "mit"
+  ],
+  "author": "Exequiel Ceasar Navarrete <esnavarrete1@up.edu.ph>",
+  "license": "MIT",
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browser": {
+    "jquery": "./resources/dependencies/jquery/dist/jquery.js"
+  },
+  "browserify-shim": {
+    "jquery": "global:jQuery"
+  },
+  "devDependencies": {
+    "browserify-shim": "^3.8.12"
+  }
+}

@@ -18,4 +18,17 @@ Thumbs.db
 ehthumbs.db
 # Icon?
 
+# Project Files
+resources/dependencies
+resources/lib/bourbon
+www/compiled
+www/fonts/*
+!www/fonts/.gitkeep
+
+# node files
+node_modules
+
+# Temporary files
+tmp
+
 

@@ -9,9 +9,14 @@
     <body>
         <h1 class="hidden">Exercise 1</h1>
 
+        <!-- [.main-container] ::start -->
         <div class="main-container">
+
             <div class="container-fluid">
+
                 <div class="row editor">
+
+                    <!-- [.editor__sidebar] ::start -->
                     <nav class="editor__sidebar sidebar sidebar--s-1 hidden-xs col-sm-3 col-md-3 col-lg-2">
                         <h2 class="sidebar__title">Open Files</h2>
 
@@ -48,9 +53,13 @@
                             </li>
                         </ul>
                     </nav>
+                    <!-- [.editor__sidebar] ::end -->
 
+                    <!-- [.editor__body] ::start -->
                     <div class="editor__body col-sm-9 col-md-9 col-lg-10">
-                        <main>
+
+                        <!-- [.main-content] ::start -->
+                        <main class="main-content">
                             <!-- [What is HTTP] ::start -->
                             <section id="what-is-http">
                                 <h2>
@@ -457,13 +466,21 @@
                                     </dl>
                                 </section>
                                 <!-- [HTTP Status Codes - 5xx] ::end -->
+
                             </section>
                             <!-- [HTTP Status Codes] ::end -->
+
                         </main>
+                        <!-- [.main-content] ::end -->
+
                     </div>
+                    <!-- [.editor__body] ::end -->
                 </div>
+
             </div>
+
         </div>
+        <!-- [.main-container] ::end -->
 
         <script src="./compiled/js/lib-bundle.js"></script>
     </body>

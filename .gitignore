@@ -22,4 +22,7 @@ ehthumbs.db
 resources/dependencies
 resources/lib/bourbon
 
+# Temporary files
+tmp
+
 

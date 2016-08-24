@@ -23,7 +23,7 @@ export let config = {
         notify: true,
         reloadDelay: 0,
         files: [
-            cwd + '/web/**/*.html.twig'
+            cwd + '/www/**/*.html'
         ]
     },
 

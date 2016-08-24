@@ -18,4 +18,8 @@ Thumbs.db
 ehthumbs.db
 # Icon?
 
+# Project Files
+resources/dependencies
+resources/lib/bourbon
+
 

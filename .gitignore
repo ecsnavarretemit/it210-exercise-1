@@ -21,6 +21,8 @@ ehthumbs.db
 # Project Files
 resources/dependencies
 resources/lib/bourbon
+www/fonts/*
+!www/fonts/.gitkeep
 
 # node files
 node_modules

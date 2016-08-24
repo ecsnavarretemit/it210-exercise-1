@@ -2,4 +2,84 @@
 // Site
 // *******************************#
 
+body
+  background-color: #17252D
+  color: #FFF
+
+// ---------------------------------
+// [Sidebars] ::start
+// ---------------------------------
+
+.sidebar--s-1
+
+  .sidebar__list
+    margin: 0 -15px
+
+    .list__item__link
+      position: relative
+      display: block
+      padding: 5px 30px
+      color: #FFF
+
+      .link__icon
+        position: absolute
+        top: 50%
+        left: 10px
+        opacity: 0
+        +transition(opacity 0.5s ease-in-out)
+        +transform(translateY(-50%))
+
+      &:hover
+        background-color: lighten(#1D2B33, 10%)
+        text-decoration: none
+
+        .link__icon
+          opacity: 1
+
+// ---------------------------------
+// [Sidebars] ::end
+// ---------------------------------
+
+
+
+// ---------------------------------
+// [Editor] ::start
+// ---------------------------------
+
+.editor
+
+  .editor__body
+    position: fixed
+    top: 0
+    left: 25%
+    height: 100%
+
+  .editor__sidebar
+    position: fixed
+    top: 0
+    z-index: 1
+    height: 100%
+    background-color: #1D2B33
+
+    .sidebar__title
+      margin-top: 10px
+      font-size: 1em
+
++max-screen($screen-xs-max)
+  .editor
+
+    .editor__body
+      left: 0
+      width: 100%
+
++min-screen($screen-lg-min)
+  .editor
+    .editor__body
+      left: 16.66667%
+      width: 83.33333%
+
+// ---------------------------------
+// [Editor] ::end
+// ---------------------------------
+
 

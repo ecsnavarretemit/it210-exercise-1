@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Build Assets
+# Author: Exequiel Ceasar Navarrete <esnavarrete1@up.edu.ph>
+# Version 0.0.1
+
+# store the current working directory
+CWD=$(pwd)
+
+# go the gulp directory
+cd build
+
+# start the build with custom current working directory
+gulp --build-cwd=$CWD "$@"
+
+

@@ -23,5 +23,8 @@
   },
   "browserify-shim": {
     "jquery": "global:jQuery"
+  },
+  "devDependencies": {
+    "browserify-shim": "^3.8.12"
   }
 }

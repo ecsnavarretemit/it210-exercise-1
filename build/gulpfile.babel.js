@@ -4,7 +4,7 @@
  * Gulp Bootstrap File
  *   - structure based on gulp starter <https://github.com/greypants/gulp-starter>
  *
- * Copyright(c) Exequiel Ceasar Navarrete <development.lkexi@gmail.com>
+ * Copyright(c) Exequiel Ceasar Navarrete <esnavarrete1@up.edu.ph>
  * Licensed under MIT
  */
 'use strict';

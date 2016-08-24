@@ -2,8 +2,8 @@
 
 /*!
  * Watcher Factory
- * 
- * Copyright(c) Exequiel Ceasar Navarrete <development.lkexi@gmail.com>
+ *
+ * Copyright(c) Exequiel Ceasar Navarrete <esnavarrete1@up.edu.ph>
  * Licensed under MIT
  */
 'use strict';
@@ -34,7 +34,7 @@ let WatcherFactory = {
     },
 
     close: function(id) {
-        // close the watcher that has the id provided 
+        // close the watcher that has the id provided
         if ( this.collection.has(id) ) {
             this.collection.get( id ).getWatcher().close();
         }

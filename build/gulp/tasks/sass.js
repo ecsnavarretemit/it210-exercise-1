@@ -2,8 +2,8 @@
 
 /*!
  * Gulp Sass Task
- * 
- * Copyright(c) Exequiel Ceasar Navarrete <development.lkexi@gmail.com>
+ *
+ * Copyright(c) Exequiel Ceasar Navarrete <esnavarrete1@up.edu.ph>
  * Licensed under MIT
  */
 'use strict';
@@ -79,7 +79,7 @@ function sassTask(production) {
 }
 
 gulp.task( 'sass:dev', (cb) => {
-    // when the bundle config for sass task is empty invoke the callback for the gulp task to 
+    // when the bundle config for sass task is empty invoke the callback for the gulp task to
     // immediately proceed to other remaining tasks
     if ( config.sass.length === 0 ) {
         cb();
@@ -91,7 +91,7 @@ gulp.task( 'sass:dev', (cb) => {
 });
 
 gulp.task( 'sass:prod', (cb) => {
-    // when the bundle config for sass task is empty invoke the callback for the gulp task to 
+    // when the bundle config for sass task is empty invoke the callback for the gulp task to
     // immediately proceed to other remaining tasks
     if ( config.sass.length === 0 ) {
         cb();

@@ -2,8 +2,8 @@
 
 /*!
  * Gulp ES6 Task
- * 
- * Copyright(c) Exequiel Ceasar Navarrete <development.lkexi@gmail.com>
+ *
+ * Copyright(c) Exequiel Ceasar Navarrete <esnavarrete1@up.edu.ph>
  * Licensed under MIT
  */
 'use strict';
@@ -152,7 +152,7 @@ function es6Task(production) {
 }
 
 gulp.task( 'es6:dev', (cb) => {
-    // when the bundle config for es6 task is empty invoke the callback for the gulp task to 
+    // when the bundle config for es6 task is empty invoke the callback for the gulp task to
     // immediately proceed to other remaining tasks
     if ( config.es6.bundleConfigs.length === 0 ) {
         cb();
@@ -164,7 +164,7 @@ gulp.task( 'es6:dev', (cb) => {
 });
 
 gulp.task( 'es6:prod', (cb) => {
-    // when the bundle config for es6 task is empty invoke the callback for the gulp task to 
+    // when the bundle config for es6 task is empty invoke the callback for the gulp task to
     // immediately proceed to other remaining tasks
     if ( config.es6.bundleConfigs.length === 0 ) {
         cb();

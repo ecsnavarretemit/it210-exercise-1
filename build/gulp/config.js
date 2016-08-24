@@ -30,6 +30,8 @@ export let config = {
     clean: {
         all: [
             'www/compiled',
+            'www/fonts/bootstrap',
+            'www/fonts/font-awesome'
         ]
     },
 
@@ -42,6 +44,17 @@ export let config = {
             dest: 'www/compiled/js',
             outputName: 'lib-bundle.js',
             sourcemaps: true,
+        }
+    ],
+
+    copyfonts: [
+        {
+            src: 'resources/dependencies/bootstrap-sass/assets/fonts/bootstrap/**/*',
+            dest: 'www/fonts/bootstrap'
+        },
+        {
+            src: 'resources/dependencies/font-awesome/fonts/**/*',
+            dest: 'www/fonts/font-awesome'
         }
     ],
 
@@ -79,7 +92,7 @@ export const PID_FILE = cwd + '/tmp/gulp.pid';
 
 export const TASKS_ENABLED = [
     'clean:all',
-    ['concatjs:dev', 'sass:dev', 'es6:dev'],
+    ['concatjs:dev', 'sass:dev', 'es6:dev', 'copyfonts'],
     'sass:watch',
     'browser-sync',
     'configuration:watch'

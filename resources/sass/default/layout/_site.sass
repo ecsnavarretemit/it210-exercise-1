@@ -11,8 +11,7 @@ body
     overflow: hidden
 
   .main-content
-    overflow: scroll
-    height: 923px
+    overflow-y: scroll
     margin: 0 -15px
     padding: 0 15px
 
@@ -35,16 +34,21 @@ body
         position: absolute
         top: 50%
         left: 10px
-        opacity: 0
-        +transition(opacity 0.5s ease-in-out)
         +transform(translateY(-50%))
 
       &:hover
         background-color: lighten(#1D2B33, 10%)
         text-decoration: none
 
+  .sidebar__group--opened-files
+    .list__item__link
+      &:hover
         .link__icon
           opacity: 1
+
+      .link__icon
+        opacity: 0
+        +transition(opacity 0.5s ease-in-out)
 
 // ---------------------------------
 // [Sidebars] ::end
@@ -63,6 +67,9 @@ body
     top: 0
     left: 25%
     height: 100%
+
+    .tab-content
+      padding: 10px 0
 
   .editor__tabs,
   .editor__sidebar

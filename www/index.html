@@ -17,42 +17,50 @@
                 <div class="row editor">
 
                     <!-- [.editor__sidebar] ::start -->
-                    <nav class="editor__sidebar sidebar sidebar--s-1 hidden-xs col-sm-3 col-md-3 col-lg-2">
-                        <h2 class="sidebar__title">Open Files</h2>
+                    <div class="editor__sidebar sidebar sidebar--s-1 hidden-xs col-sm-3 col-md-3 col-lg-2">
+                        <nav class="sidebar__group sidebar__group--opened-files">
+                            <h2 class="sidebar__title">Open Files</h2>
 
-                        <ul class="list list-unstyled sidebar__list">
-                            <li class="list__item">
-                                <a href="#what-is-http" class="list__item__link link">
-                                    <i class="fa fa-times link__icon" aria-hidden="true"></i>
-                                    <span class="link__text">What is HTTP?</span>
-                                </a>
-                            </li>
-                            <li class="list__item">
-                                <a href="#difference-between-http-and-https" class="list__item__link link">
-                                    <i class="fa fa-times link__icon" aria-hidden="true"></i>
-                                    <span class="link__text">How does HTTPS differ from HTTP?</span>
-                                </a>
-                            </li>
-                            <li class="list__item">
-                                <a href="#http-request-formation" class="list__item__link link">
-                                    <i class="fa fa-times link__icon" aria-hidden="true"></i>
-                                    <span class="link__text">How are HTTP Requests formed?</span>
-                                </a>
-                            </li>
-                            <li class="list__item">
-                                <a href="#http-response-formation" class="list__item__link link">
-                                    <i class="fa fa-times link__icon" aria-hidden="true"></i>
-                                    <span class="link__text">How are HTTP Responses formed?</span>
-                                </a>
-                            </li>
-                            <li class="list__item">
-                                <a href="#http-status-codes" class="list__item__link link">
-                                    <i class="fa fa-times link__icon" aria-hidden="true"></i>
-                                    <span class="link__text">Discuss HTTP Status Codes</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                            <ul class="list list-unstyled sidebar__list"></ul>
+                        </nav>
+
+                        <nav class="sidebar__group sidebar__group--available-files">
+                            <h2 class="sidebar__title">Available Files</h2>
+
+                            <ul class="list list-unstyled sidebar__list">
+                                <li class="list__item">
+                                    <a href="#what-is-http" class="list__item__link link">
+                                        <i class="fa fa-file-text link__icon" aria-hidden="true"></i>
+                                        <span class="link__text">What is HTTP?</span>
+                                    </a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="#difference-between-http-and-https" class="list__item__link link">
+                                        <i class="fa fa-file-text link__icon" aria-hidden="true"></i>
+                                        <span class="link__text">How does HTTPS differ from HTTP?</span>
+                                    </a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="#http-request-formation" class="list__item__link link">
+                                        <i class="fa fa-file-text link__icon" aria-hidden="true"></i>
+                                        <span class="link__text">How are HTTP Requests formed?</span>
+                                    </a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="#http-response-formation" class="list__item__link link">
+                                        <i class="fa fa-file-text link__icon" aria-hidden="true"></i>
+                                        <span class="link__text">How are HTTP Responses formed?</span>
+                                    </a>
+                                </li>
+                                <li class="list__item">
+                                    <a href="#http-status-codes" class="list__item__link link">
+                                        <i class="fa fa-file-text link__icon" aria-hidden="true"></i>
+                                        <span class="link__text">Discuss HTTP Status Codes</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                     <!-- [.editor__sidebar] ::end -->
 
                     <!-- [.editor__body] ::start -->
@@ -61,34 +69,9 @@
                             <h2 class="hidden">Opened Tabs</h2>
 
                             <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-tabs__item active" role="presentation" >
-                                    <a href="#what-is-http" aria-controls="what-is-http" role="tab" data-toggle="tab">
-                                        <span class="nav-tabs__item__text">What is HTTP?</span>
-                                        <i class="fa fa-times nav-tabs__item__icon" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li class="nav-tabs__item" role="presentation">
-                                    <a href="#difference-between-http-and-https" aria-controls="difference-between-http-and-https" role="tab" data-toggle="tab">
-                                        <span class="nav-tabs__item__text">How does HTTPS differ from HTTP?</span>
-                                        <i class="fa fa-times nav-tabs__item__icon" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li class="nav-tabs__item" role="presentation">
-                                    <a href="#http-request-formation" aria-controls="http-request-formation" role="tab" data-toggle="tab">
-                                        <span class="nav-tabs__item__text">How are HTTP Requests formed?</span>
-                                        <i class="fa fa-times nav-tabs__item__icon" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li class="nav-tabs__item" role="presentation">
-                                    <a href="#http-response-formation" aria-controls="http-response-formation" role="tab" data-toggle="tab">
-                                        <span class="nav-tabs__item__text">How are HTTP Responses formed?</span>
-                                        <i class="fa fa-times nav-tabs__item__icon" aria-hidden="true"></i>
-                                    </a>
-                                </li>
-                                <li class="nav-tabs__item" role="presentation">
-                                    <a href="#http-status-codes" aria-controls="http-status-codes" role="tab" data-toggle="tab">
-                                        <span class="nav-tabs__item__text">Discuss HTTP Status Codes</span>
-                                        <i class="fa fa-times nav-tabs__item__icon" aria-hidden="true"></i>
+                                <li class="nav-tabs__item nav-tabs__item--intro active" role="presentation" >
+                                    <a href="#introduction" aria-controls="introduction" role="tab" data-toggle="tab">
+                                        <span class="nav-tabs__item__text">Introduction</span>
                                     </a>
                                 </li>
                             </ul>
@@ -98,9 +81,16 @@
                         <main class="main-content">
 
                             <div class="tab-content">
+                                <!-- [Introduction] ::start -->
+                                <section id="introduction" class="tab-pane active" role="tabpanel">
+                                    <h2 class="hidden">Introduction</h2>
+
+                                    <p>Introduction Content</p>
+                                </section>
+                                <!-- [Introduction] ::end -->
 
                                 <!-- [What is HTTP] ::start -->
-                                <section id="what-is-http" class="tab-pane fade in active" role="tabpanel">
+                                <section id="what-is-http" class="tab-pane" role="tabpanel">
                                     <h2>
                                         What is <abbr title="Hypertext Transfer Protocol">HTTP</abbr>?
                                     </h2>
@@ -121,7 +111,7 @@
                                 <!-- [What is HTTP] ::end -->
 
                                 <!-- [Difference between HTTP and HTTPS] ::start -->
-                                <section id="difference-between-http-and-https" class="tab-pane fade" role="tabpanel">
+                                <section id="difference-between-http-and-https" class="tab-pane" role="tabpanel">
                                     <h2>How does <abbr title="HTTP Secure">HTTPS</abbr> differ from HTTP?</h2>
 
                                     <div class="text-group">
@@ -136,7 +126,7 @@
                                 <!-- [Difference between HTTP and HTTPS] ::end -->
 
                                 <!-- [HTTP Request Formation] ::start -->
-                                <section id="http-request-formation" class="tab-pane fade" role="tabpanel">
+                                <section id="http-request-formation" class="tab-pane" role="tabpanel">
                                     <h2>How are HTTP Requests formed?</h2>
 
                                     <ol class="list">
@@ -153,7 +143,7 @@
                                 <!-- [HTTP Request Formation] ::end -->
 
                                 <!-- [HTTP Response Formation] ::start -->
-                                <section id="http-response-formation" class="tab-pane fade" role="tabpanel">
+                                <section id="http-response-formation" class="tab-pane" role="tabpanel">
                                     <h2>How are HTTP Responses formed?</h2>
 
                                     <ol class="list">
@@ -167,7 +157,7 @@
                                 <!-- [HTTP Response Formation] ::end -->
 
                                 <!-- [HTTP Status Codes] ::start -->
-                                <section id="http-status-codes" class="tab-pane fade" role="tabpanel">
+                                <section id="http-status-codes" class="tab-pane" role="tabpanel">
                                     <h2>Discuss HTTP Status Codes</h2>
 
                                     <p class="text">
@@ -524,6 +514,7 @@
         <!-- [.main-container] ::end -->
 
         <script src="./compiled/js/lib-bundle.js"></script>
+        <script src="./compiled/js/site.js"></script>
     </body>
 </html>
 

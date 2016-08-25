@@ -27,6 +27,22 @@ jQuery( window ).on( 'load', () => {
         let scrollbarEnabled = false;
         let scrollableEl     = editorBody.find( '.main-content' );
 
+        let scrollbarOptions = {
+            callbacks: {
+                onInit () {
+                    scrollbarEnabled = true;
+                },
+
+                onOverflowY () {
+                    $( this ).addClass( 'main-content--custom-scrollbar' );
+                },
+
+                onOverflowYNone () {
+                    $( this ).removeClass( 'main-content--custom-scrollbar' );
+                }
+            }
+        };
+
         browserWindow.on( 'resize.toggleScrollbar', lodash.debounce(function() {
             let win = $( this );
 
@@ -35,20 +51,8 @@ jQuery( window ).on( 'load', () => {
 
                 scrollableEl
                     .height( contentHeight )
-                    .mCustomScrollbar({
-                        callbacks:{
-                            onInit: function(){
-                                scrollbarEnabled = true;
-                            },
-                            onOverflowY: function(){
-                                $( this ).addClass( 'main-content--custom-scrollbar' );
-                            },
-
-                            onOverflowYNone: function(){
-                                $( this ).removeClass( 'main-content--custom-scrollbar' );
-                            }
-                        }
-                    });
+                    .mCustomScrollbar( scrollbarOptions )
+                    ;
             } else {
                 if ( scrollbarEnabled ) {
                     scrollableEl
@@ -264,7 +268,6 @@ jQuery( document ).ready(($) => {
             helpers.openTab( anchorTabs.eq(prevIdx).attr('href') );
         })
         ;
-
 
 });
 

@@ -6,6 +6,16 @@ body
   background-color: #17252D
   color: #FFF
 
++min-screen($screen-sm-min)
+  body
+    overflow: hidden
+
+  .main-content
+    overflow: scroll
+    height: 923px
+    margin: 0 -15px
+    padding: 0 15px
+
 // ---------------------------------
 // [Sidebars] ::start
 // ---------------------------------
@@ -49,21 +59,63 @@ body
 .editor
 
   .editor__body
-    position: fixed
+    // position: fixed
     top: 0
     left: 25%
     height: 100%
+
+  .editor__tabs,
+  .editor__sidebar
+    background-color: #1D2B33
 
   .editor__sidebar
     position: fixed
     top: 0
     z-index: 1
     height: 100%
-    background-color: #1D2B33
 
     .sidebar__title
       margin-top: 10px
       font-size: 1em
+
+  .editor__tabs
+    margin: 0 -15px
+
+    .nav-tabs
+      border-bottom: none
+
+      .nav-tabs__item
+        position: relative
+        width: 160px
+
+        a
+          margin-right: 0
+          color: darken(#FFFFFF, 30%)
+          border: none
+
+          &:hover
+            background-color: lighten(#17252D, 10%)
+
+            .nav-tabs__item__icon
+              opacity: 1
+
+        &.active a
+          background-color: #17252D
+          color: #FFF
+
+        .nav-tabs__item__text
+          display: inline-block
+          max-width: 120px
+          margin-top: 5px
+          +text-overflow()
+
+        .nav-tabs__item__icon
+          position: absolute
+          top: 50%
+          right: 10px
+          opacity: 0
+          +transition(opacity 0.5s ease-in-out)
+          +transform(translateY(-50%))
 
 +max-screen($screen-xs-max)
   .editor

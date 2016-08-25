@@ -155,9 +155,11 @@ jQuery( document ).ready(($) => {
 
     openedFiles
         .children( '.list' )
-        .on( 'click.prevent', '.list__item .link', function(e) {
+        .on( 'click.focustab', '.list__item .link', function(e) {
             // prevent default browser behavior
             e.preventDefault();
+
+            helpers.openTab( $( this ).attr('href') );
         })
         .on( 'click.closeFile', '.list__item .link__icon', function(e) {
             let anchor = $( this ).parent( '.link' );

@@ -53,14 +53,16 @@ jQuery( window ).on( 'load', () => {
                     .height( contentHeight )
                     .mCustomScrollbar( scrollbarOptions )
                     ;
-            } else {
-                if ( scrollbarEnabled ) {
-                    scrollableEl
-                        .css( 'height', 'auto' )
-                        .mCustomScrollbar( 'destroy' );
 
-                    scrollbarEnabled = false;
-                }
+                scrollbarEnabled = true;
+            }
+
+            if ( win.width() <= 767 && scrollbarEnabled ) {
+                scrollableEl
+                    .css( 'height', 'auto' )
+                    .mCustomScrollbar( 'destroy' );
+
+                scrollbarEnabled = false;
             }
         }, 300));
     }

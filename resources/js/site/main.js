@@ -70,27 +70,13 @@ jQuery( document ).ready(($) => {
         },
 
         openTab (href) {
-            // let panes = editorBody.find( '.main-content .tab-pane' );
 
             let el = editorTabs
                 .find( '.nav-tabs .nav-tabs__item a' )
                 .filter( `[href="${href}"]` )
                 ;
 
-            // console.log( panes.filter('.active') );
-
-            // hide current open tab
-            // panes
-            //     .filter( '.active' )
-            //     .removeClass( 'active' )
-            //     ;
-
             if ( el.length > 0 ) {
-                // panes
-                //     .filter( href )
-                //     .addClass( 'active' )
-                //     ;
-
                 el.tab( 'show' );
             }
 

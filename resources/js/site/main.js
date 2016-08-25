@@ -21,16 +21,24 @@ jQuery( window ).on( 'load', () => {
     let browserWindow = $( window );
     let editorBody    = $( '.editor__body' );
     let editorTabs    = editorBody.children( '.editor__tabs' );
-    let editorContent = editorBody.find( '.main-content .tab-content' );
     // [Global Elements] ::end
 
-    // [Fix content height] ::start
-    {
-        let contentHeight = browserWindow.height() - editorTabs.outerHeight();
+    let contentHeight = browserWindow.height() - editorTabs.outerHeight();
 
-        editorContent.height( contentHeight );
-    }
-    // [Fix content height] ::end
+    editorBody
+        .find( '.main-content' )
+        .height( contentHeight )
+        .mCustomScrollbar({
+            callbacks:{
+                onOverflowY: function(){
+                    $( this ).addClass( 'main-content--custom-scrollbar' );
+                },
+
+                onOverflowYNone: function(){
+                    $( this ).removeClass( 'main-content--custom-scrollbar' );
+                }
+            }
+        });
 
 });
 

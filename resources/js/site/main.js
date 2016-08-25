@@ -67,7 +67,7 @@ jQuery( document ).ready(($) => {
     'use strict';
 
     // [Global Elements] ::start
-    // let browserWindow = $( window );
+    let browserWindow  = $( window );
     let editorBody     = $( '.editor__body' );
     let editorTabs     = editorBody.children( '.editor__tabs' );
     let sidebar        = $( '.editor__sidebar' );
@@ -171,6 +171,9 @@ jQuery( document ).ready(($) => {
         .on( 'click.openFile.showTab', '.list__item .link', function() {
             // show the tab on open
             helpers.openTab( $(this).attr("href") );
+        })
+        .on( 'click.openFile.toggleScrollbar', function() {
+            browserWindow.trigger( 'resize.toggleScrollbar' );
         })
         ;
 

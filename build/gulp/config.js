@@ -60,15 +60,15 @@ export let config = {
 
     es6: {
         bundleConfigs: [
-            // {
-            //     entries: 'resources/bundles/app/js/test/main.js',
-            //     dest: 'web/bundles/app/compiled/js',
-            //     outputName: 'test.js',
-            //     basedir: cwd,
-            //     paths: [
-            //         cwd + '/resources'
-            //     ]
-            // }
+            {
+                entries: 'resources/js/site/main.js',
+                dest: 'www/compiled/js',
+                outputName: 'site.js',
+                basedir: cwd,
+                paths: [
+                    cwd + '/resources'
+                ]
+            }
         ]
     },
 

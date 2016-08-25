@@ -19,10 +19,12 @@
     ]
   },
   "browser": {
-    "jquery": "./resources/dependencies/jquery/dist/jquery.js"
+    "jquery": "./resources/dependencies/jquery/dist/jquery.js",
+    "lodash": "./resources/dependencies/lodash/dist/lodash.js"
   },
   "browserify-shim": {
-    "jquery": "global:jQuery"
+    "jquery": "global:jQuery",
+    "lodash": "global:_"
   },
   "devDependencies": {
     "browserify-shim": "^3.8.12"

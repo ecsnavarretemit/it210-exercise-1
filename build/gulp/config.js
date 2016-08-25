@@ -39,6 +39,7 @@ export let config = {
         {
             src: [
                 'resources/dependencies/jquery/dist/jquery.js',
+                'resources/dependencies/lodash/dist/lodash.js',
                 'resources/dependencies/bootstrap-sass/assets/javascripts/bootstrap.js',
             ],
             dest: 'www/compiled/js',

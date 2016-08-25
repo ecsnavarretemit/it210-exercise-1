@@ -23,7 +23,8 @@
     "lodash": "./resources/dependencies/lodash/dist/lodash.js"
   },
   "browserify-shim": {
-    "jquery": "global:jQuery"
+    "jquery": "global:jQuery",
+    "lodash": "global:_"
   },
   "dependencies": {
     "app-module-path": "^1.1.0",

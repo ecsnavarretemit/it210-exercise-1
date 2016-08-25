@@ -6,20 +6,9 @@ body
   background-color: #17252D
   color: #FFF
 
-+min-screen($screen-sm-min)
-  body
-    overflow: hidden
-
-  .main-content
-    margin: 0 -15px
-    padding: 0 15px
-
-    &.main-content--custom-scrollbar
-      padding-right: 0
-
-// ---------------------------------
+// --------------------------------------
 // [Sidebars] ::start
-// ---------------------------------
+// --------------------------------------
 
 .sidebar--s-1
 
@@ -52,15 +41,15 @@ body
         opacity: 0
         +transition(opacity 0.5s ease-in-out)
 
-// ---------------------------------
+// --------------------------------------
 // [Sidebars] ::end
-// ---------------------------------
+// --------------------------------------
 
 
 
-// ---------------------------------
+// --------------------------------------
 // [Editor] ::start
-// ---------------------------------
+// --------------------------------------
 
 .editor
 
@@ -72,6 +61,9 @@ body
 
     .tab-content
       padding: 10px 0
+
+      .tab-pane
+        display: block
 
   .editor__tabs,
   .editor__sidebar
@@ -126,21 +118,80 @@ body
           +transition(opacity 0.5s ease-in-out)
           +transform(translateY(-50%))
 
+// --------------------------------------
+// [Editor] ::end
+// --------------------------------------
+
+// --------------------------------------
+// [Browser Width: 0px to 767px] ::start
+// --------------------------------------
+
 +max-screen($screen-xs-max)
+  // [Editor] ::start
+
   .editor
 
     .editor__body
       left: 0
       width: 100%
 
+  // [Editor] ::end
+
+// --------------------------------------
+// [Browser Width: 0px to 767px] ::end
+// --------------------------------------
+
+
+// --------------------------------------
+// [Browser Width: 768px up] ::start
+// --------------------------------------
+
++min-screen($screen-sm-min)
+  body
+    overflow: hidden
+
+  .main-content
+    margin: 0 -15px
+    padding: 0 15px
+
+    &.main-content--custom-scrollbar
+      padding-right: 0
+
+  // [Editor] ::start
+
+  .editor
+
+    .editor__body .tab-content
+      .tab-pane
+        display: none
+
+        &.active
+          display: block
+
+  // [Editor] ::end
+
+// --------------------------------------
+// [Browser Width: 768px and up] ::end
+// --------------------------------------
+
+
+
+// --------------------------------------
+// [Browser Width: 1200px and up] ::start
+// --------------------------------------
+
 +min-screen($screen-lg-min)
+  // [Editor] ::start
+
   .editor
     .editor__body
       left: 16.66667%
       width: 83.33333%
 
-// ---------------------------------
-// [Editor] ::end
-// ---------------------------------
+  // [Editor] ::end
+
+// --------------------------------------
+// [Browser Width: 1200px and up] ::end
+// --------------------------------------
 
 

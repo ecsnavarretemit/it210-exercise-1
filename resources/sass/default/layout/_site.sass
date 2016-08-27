@@ -174,13 +174,15 @@ body
       .nav-tabs__item
         position: relative
         width: 160px
+        +border-top-radius(0)
 
         a
           margin-right: 0
           color: darken(#FFFFFF, 30%)
           border: none
 
-          &:hover
+          &:hover,
+          &:focus
             background-color: lighten(#17252D, 10%)
 
             .nav-tabs__item__icon
@@ -315,6 +317,33 @@ body
 
 
 // --------------------------------------
+// [Browser Width: 768px to 1200px] ::start
+// --------------------------------------
+
++screen($screen-sm-min, $screen-lg-min)
+  // [Editor] ::start
+
+  .editor .editor__body
+    .editor__tabs
+
+      .nav-tabs
+        white-space: nowrap
+
+        .nav-tabs__item
+          display: inline-block
+          float: none
+
+      .mCSB_container
+        margin-bottom: 10px
+
+  // [Editor] ::end
+
+// --------------------------------------
+// [Browser Width: 768px to 1200px] ::end
+// --------------------------------------
+
+
+// --------------------------------------
 // [Browser Width: 1200px and up] ::start
 // --------------------------------------
 
@@ -325,6 +354,16 @@ body
     .editor__body
       left: 16.66667%
       width: 83.33333%
+
+      .editor__tabs
+        overflow: visible
+
+        .nav-tabs
+          white-space: normal
+
+          .nav-tabs__item
+            display: block
+            float: left
 
   // [Editor] ::end
 

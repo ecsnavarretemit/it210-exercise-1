@@ -24,6 +24,42 @@ jQuery( window ).on( 'load', () => {
     let navbar        = $( '.editor__menu' ).find( '.navbar-nav' );
     // [Global Elements] ::end
 
+    // [Tab Scrollbar] ::start
+    {
+        let scrollbarEnabled = false;
+        let scrollableEl     = editorBody.find( '.editor__tabs' );
+
+        let scrollbarOptions = {
+            callbacks: {
+                onInit () {
+                    scrollbarEnabled = true;
+                }
+            }
+        };
+
+        browserWindow.on( 'resize.toggleTabScrollbar', lodash.debounce(function() {
+            let win         = $( this );
+            let windowWidth = win.width();
+
+            // enable scrollbar between 767px and 1200px
+            if ( windowWidth > 767 && windowWidth <= 1200 && !scrollbarEnabled ) {
+                scrollableEl.mCustomScrollbar( scrollbarOptions );
+
+                scrollbarEnabled = true;
+            }
+
+            // remove scrollbar if the window width is less than or equal to 767px or
+            // greater than 1200px
+            if ( (windowWidth <= 767 || windowWidth > 1200) && scrollbarEnabled ) {
+                scrollableEl.mCustomScrollbar( 'destroy' );
+
+                scrollbarEnabled = false;
+            }
+        }, 300));
+    }
+    // [Tab Scrollbar] ::end
+
+    // [Content Scrollbar] :: start
     {
         let scrollbarEnabled = false;
         let scrollableEl     = editorBody.find( '.main-content' );
@@ -44,7 +80,7 @@ jQuery( window ).on( 'load', () => {
             }
         };
 
-        browserWindow.on( 'resize.toggleScrollbar', lodash.debounce(function() {
+        browserWindow.on( 'resize.toggleContentScrollbar', lodash.debounce(function() {
             let win = $( this );
 
             if ( win.width() > 767 && !scrollbarEnabled ) {
@@ -67,7 +103,9 @@ jQuery( window ).on( 'load', () => {
             }
         }, 300));
     }
+    // [Content Scrollbar] :: end
 
+    // [Back to Top] :: start
     {
         let scrollTrigger = 100;
         let backToTop     = $( '#back-to-top' );
@@ -88,7 +126,9 @@ jQuery( window ).on( 'load', () => {
             }, 700);
         });
     }
+    // [Back to Top] :: end
 
+    // [Navbar Toggle] :: start
     {
         let navbarToggle = $( '.navbar-toggle' );
 
@@ -108,6 +148,7 @@ jQuery( window ).on( 'load', () => {
             });
         });
     }
+    // [Navbar Toggle] :: end
 
 });
 
@@ -191,6 +232,8 @@ jQuery( document ).ready(($) => {
                 // appending to the list multiple times
                 item.data( 'openedfile', true );
             }
+
+            browserWindow.trigger( 'resize.toggleTabScrollbar' );
         })
         .on( 'click.openFile.appendOnTabs', '.list__item .link', function(e) {
             let anchor   = $( this );
@@ -221,7 +264,7 @@ jQuery( document ).ready(($) => {
             helpers.openTab( $(this).attr("href") );
         })
         .on( 'click.openFile.toggleScrollbar', function() {
-            browserWindow.trigger( 'resize.toggleScrollbar' );
+            browserWindow.trigger( 'resize.toggleContentScrollbar' );
         })
         ;
 

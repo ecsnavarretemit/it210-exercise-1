@@ -37,23 +37,39 @@ jQuery( window ).on( 'load', () => {
             }
         };
 
+        let isTabOverflowing = () => {
+            let flag = false;
+
+            let widths = editorTabs
+                .find( '.nav-tabs .nav-tabs__item' )
+                .map( function() {
+                    return $( this ).outerWidth();
+                })
+                .get()
+                ;
+
+            if ( lodash.sum(widths) > editorBody.outerWidth() ) {
+                flag = true;
+            }
+
+            return flag;
+        };
+
         browserWindow.on( 'resize.toggleTabScrollbar', lodash.debounce(function() {
             let win         = $( this );
             let windowWidth = win.width();
 
+            // destroy the instance
+            scrollableEl.mCustomScrollbar( 'destroy' );
+
+            // reset the flag
+            scrollbarEnabled = false;
+
             // enable scrollbar between 767px and 1200px
-            if ( windowWidth > 767 && windowWidth <= 1200 && !scrollbarEnabled ) {
+            if ( windowWidth > 767 && isTabOverflowing() && !scrollbarEnabled ) {
                 scrollableEl.mCustomScrollbar( scrollbarOptions );
 
                 scrollbarEnabled = true;
-            }
-
-            // remove scrollbar if the window width is less than or equal to 767px or
-            // greater than 1200px
-            if ( (windowWidth <= 767 || windowWidth > 1200) && scrollbarEnabled ) {
-                scrollableEl.mCustomScrollbar( 'destroy' );
-
-                scrollbarEnabled = false;
             }
         }, 300));
     }
@@ -252,7 +268,7 @@ jQuery( document ).ready(($) => {
                 });
 
                 // append the compiled template
-                editorTabs.children( '.nav-tabs' ).append( compiled );
+                editorTabs.find( '.nav-tabs' ).append( compiled );
 
                 // set the opened data to true so that it will prevent
                 // appending to the list multiple times

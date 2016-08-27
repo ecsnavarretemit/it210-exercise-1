@@ -7,6 +7,60 @@ body
   color: #FFF
 
 // --------------------------------------
+// [Lists] ::start
+// --------------------------------------
+
+.datalist
+  .datalist__definition
+    margin-bottom: 10px
+
+    &:last-child
+      margin-bottom: 0
+
+// --------------------------------------
+// [Lists] ::start
+// --------------------------------------
+
+
+
+// --------------------------------------
+// [Image Aspect Ratio] ::start
+// --------------------------------------
+.aspect
+  position: relative
+  width: 100%
+  height: 0
+  padding-bottom: 100%
+  overflow: hidden
+
+  .aspect__inner
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    display: block
+    width: 100%
+    height: 100%
+
+  .aspect__media-content
+    display: block
+    height: 100%
+
+.aspsect--custom-725x400
+  padding-bottom: 55.1724138%
+
+.aspsect--custom-600x300
+  padding-bottom: 50%
+
+.aspect--custom-656x221
+  padding-bottom: 33.6890244%
+
+// --------------------------------------
+// [Image Aspect Ratio] ::end
+// --------------------------------------
+
+// --------------------------------------
 // [Sidebars] ::start
 // --------------------------------------
 
@@ -151,6 +205,23 @@ body
 // [Editor] ::end
 // --------------------------------------
 
+
+// --------------------------------------
+// [General] ::start
+// --------------------------------------
+
+// [.topic] ::start
+.topic
+  .topic__title
+    margin-top: 0
+// [.topic] ::end
+
+// --------------------------------------
+// [General] ::start
+// --------------------------------------
+
+
+
 // --------------------------------------
 // [Browser Width: 0px to 767px] ::start
 // --------------------------------------
@@ -218,6 +289,14 @@ body
       width: 83.33333%
 
   // [Editor] ::end
+
+  // [.topic] ::start
+
+  .topic
+    .topic__banner
+      max-width: 75%
+
+  // [.topic] ::end
 
 // --------------------------------------
 // [Browser Width: 1200px and up] ::end

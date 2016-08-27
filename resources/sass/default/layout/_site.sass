@@ -59,6 +59,9 @@ body
 .aspect--custom-656x221
   padding-bottom: 33.6890244%
 
+.aspect--custom-750x422
+  padding-bottom: 56.2666667%
+
 // --------------------------------------
 // [Image Aspect Ratio] ::end
 // --------------------------------------
@@ -217,6 +220,16 @@ body
 
 // [.topic] ::start
 .topic
+  padding: 20px 0
+  border-bottom: 2px dashed #F68444
+
+  &:first-child
+    padding-top: 0
+
+  &:last-child
+    padding-bottom: 0
+    border-bottom: none
+
   .topic__title
     margin-top: 0
     color: #EC615D
@@ -292,8 +305,10 @@ body
       padding-right: 0
 
   // [Back to Top] ::start
+
   .back-to-top
     display: none
+
   // [Back to Top] ::end
 
 
@@ -309,6 +324,14 @@ body
           display: block
 
   // [Editor] ::end
+
+  // [Topic] ::start
+
+  .topic
+    padding: 0
+    border-bottom: none
+
+  // [Topic] ::end
 
 // --------------------------------------
 // [Browser Width: 768px and up] ::end

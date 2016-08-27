@@ -17,7 +17,7 @@
                 <div class="row editor">
 
                     <div class="editor__menu visible-xs">
-                        <a href="#" type="button" class="navbar-toggle collapsed text-uppercase text-center" data-toggle="collapse" data-target="#bs-main-menu" aria-expanded="false">
+                        <a href="#" class="navbar-toggle collapsed text-uppercase text-center" data-toggle="collapse" data-target="#bs-main-menu" aria-expanded="false">
                             Main Menu <i class="fa fa-bars" aria-hidden="true"></i>
                         </a>
 
@@ -28,22 +28,43 @@
                                 <div id="bs-main-menu" class="collapse navbar-collapse">
                                     <ul class="nav navbar-nav">
                                         <li class="nav-item">
-                                            <a href="#introduction">Introduction</a>
+                                            <a href="#what-is-http" class="link link--scrollable">What is HTTP?</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#what-is-http">What is HTTP?</a>
+                                            <a href="#difference-between-http-and-https" class="link link--scrollable">How does HTTPS differ from HTTP?</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#difference-between-http-and-https">How does HTTPS differ from HTTP?</a>
+                                            <a href="#http-request-formation" class="link link--scrollable">How are HTTP Requests formed?</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#http-request-formation">How are HTTP Requests formed?</a>
+                                            <a href="#http-response-formation" class="link link--scrollable">How are HTTP Responses formed?</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a href="#http-response-formation">How are HTTP Responses formed?</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#http-status-codes">Discuss HTTP Status Codes</a>
+                                        <li class="nav-item dropdown">
+                                            <a href="#" class="dropdown-toggle link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                Discuss HTTP Status Codes
+                                                <span class="caret"></span>
+                                            </a>
+
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a href="#http-status-codes" class="link link--scrollable">Overview</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#http-status-codes-1xx" class="link link--scrollable">1xx Informational</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#http-status-codes-2xx" class="link link--scrollable">2xx Success</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#http-status-codes-3xx" class="link link--scrollable">3xx Redirection</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#http-status-codes-4xx" class="link link--scrollable">4xx Client Error</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#http-status-codes-5xx" class="link link--scrollable">5xx Server Error</a>
+                                                </li>
+                                            </ul>
                                         </li>
                                     </ul>
                                 </div>
@@ -117,7 +138,7 @@
 
                             <div class="tab-content">
                                 <!-- [Introduction] ::start -->
-                                <section id="introduction" class="tab-pane active" role="tabpanel">
+                                <section id="introduction" class="tab-pane active hidden-xs" role="tabpanel">
                                     <h2 class="hidden">Introduction</h2>
 
                                     <p>Introduction Content</p>
@@ -235,8 +256,8 @@
                                     </p>
 
                                     <!-- [HTTP Status Codes - 1xx] ::start -->
-                                    <section id="http-status-codes-1xx">
-                                        <h3>1xx Informational</h3>
+                                    <section id="http-status-codes-1xx" class="topic__child">
+                                        <h3 class="topic__child__title">1xx Informational</h3>
 
                                         <dl class="datalist">
                                             <dt class="datalist__term">100 Continue</dt>
@@ -262,8 +283,8 @@
                                     <!-- [HTTP Status Codes - 1xx] ::end -->
 
                                     <!-- [HTTP Status Codes - 2xx] ::start -->
-                                    <section id="http-status-codes-2xx">
-                                        <h3>2xx Success</h3>
+                                    <section id="http-status-codes-2xx" class="topic__child">
+                                        <h3 class="topic__child__title">2xx Success</h3>
 
                                         <dl class="datalist">
                                             <dt class="datalist__term">200 OK</dt>
@@ -319,8 +340,8 @@
                                     <!-- [HTTP Status Codes - 2xx] ::end -->
 
                                     <!-- [HTTP Status Codes - 3xx] ::start -->
-                                    <section id="http-status-codes-3xx">
-                                        <h3>3xx Redirection</h3>
+                                    <section id="http-status-codes-3xx" class="topic__child">
+                                        <h3 class="topic__child__title">3xx Redirection</h3>
 
                                         <dl class="datalist">
                                             <dt class="datalist__term">300 Multiple Choices</dt>
@@ -378,8 +399,8 @@
                                     <!-- [HTTP Status Codes - 3xx] ::end -->
 
                                     <!-- [HTTP Status Codes - 4xx] ::start -->
-                                    <section id="http-status-codes-4xx">
-                                        <h3>4xx Client Error</h3>
+                                    <section id="http-status-codes-4xx" class="topic__child">
+                                        <h3 class="topic__child__title">4xx Client Error</h3>
 
                                         <dl class="datalist">
                                             <dt class="datalist__term">400 Bad Request</dt>
@@ -516,8 +537,8 @@
                                     <!-- [HTTP Status Codes - 4xx] ::start -->
 
                                     <!-- [HTTP Status Codes - 5xx] ::start -->
-                                    <section id="http-status-codes-5xx">
-                                        <h3>5xx Server Error</h3>
+                                    <section id="http-status-codes-5xx" class="topic__child">
+                                        <h3 class="topic__child__title">5xx Server Error</h3>
 
                                         <dl class="datalist">
                                             <dt class="datalist__term">500 Internal Server Error</dt>
@@ -571,6 +592,9 @@
                         </main>
                         <!-- [.main-content] ::end -->
 
+                        <a href="#" id="back-to-top" class="back-to-top" title="Back to top">
+                            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                        </a>
                     </div>
                     <!-- [.editor__body] ::end -->
                 </div>

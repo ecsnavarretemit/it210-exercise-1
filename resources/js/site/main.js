@@ -44,18 +44,6 @@ jQuery( window ).on( 'load', () => {
             }
         };
 
-        navbar.on( 'click.scrollToSection', '.link--scrollable', function(e) {
-            var anchor = $( this ),
-                href   = anchor.attr( 'href' );
-
-            // prevent default browser behavior
-            e.preventDefault();
-
-            $.scrollTo( href, 500, {
-                offset: -50
-            });
-        });
-
         browserWindow.on( 'resize.toggleScrollbar', lodash.debounce(function() {
             let win = $( this );
 
@@ -78,6 +66,47 @@ jQuery( window ).on( 'load', () => {
                 scrollbarEnabled = false;
             }
         }, 300));
+    }
+
+    {
+        let scrollTrigger = 100;
+        let backToTop     = $( '#back-to-top' );
+
+        browserWindow.on( 'scroll.backToTop', lodash.debounce(function() {
+            let win       = $( window );
+            let scrollTop = win.scrollTop();
+
+            backToTop.toggleClass( 'back-to-top--visible', (scrollTop > scrollTrigger && win.width() < 768) );
+        }, 300));
+
+        backToTop.on( 'click.gotoTop', function(e) {
+            // prevent default browser behavior
+            e.preventDefault();
+
+            $( 'html,body' ).animate( {
+                scrollTop: 0
+            }, 700);
+        });
+    }
+
+    {
+        let navbarToggle = $( '.navbar-toggle' );
+
+        navbar.on( 'click.scrollToSection', '.link--scrollable', function(e) {
+            var anchor = $( this ),
+                href   = anchor.attr( 'href' );
+
+            // prevent default browser behavior
+            e.preventDefault();
+
+            // close the navbar
+            navbarToggle.trigger( 'click' );
+
+            // scroll to the element
+            $.scrollTo( href, 500, {
+                offset: -50
+            });
+        });
     }
 
 });

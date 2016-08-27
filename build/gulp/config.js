@@ -23,7 +23,7 @@ export let config = {
         notify: true,
         reloadDelay: 0,
         files: [
-            cwd + '/web/**/*.html.twig'
+            cwd + '/www/**/*.html'
         ]
     },
 
@@ -39,7 +39,11 @@ export let config = {
         {
             src: [
                 'resources/dependencies/jquery/dist/jquery.js',
+                'resources/dependencies/lodash/dist/lodash.js',
                 'resources/dependencies/bootstrap-sass/assets/javascripts/bootstrap.js',
+                'resources/dependencies/jquery.scrollTo/jquery.scrollTo.js',
+                'resources/dependencies/jquery-mousewheel/jquery.mousewheel.js',
+                'resources/dependencies/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js'
             ],
             dest: 'www/compiled/js',
             outputName: 'lib-bundle.js',
@@ -60,15 +64,15 @@ export let config = {
 
     es6: {
         bundleConfigs: [
-            // {
-            //     entries: 'resources/bundles/app/js/test/main.js',
-            //     dest: 'web/bundles/app/compiled/js',
-            //     outputName: 'test.js',
-            //     basedir: cwd,
-            //     paths: [
-            //         cwd + '/resources'
-            //     ]
-            // }
+            {
+                entries: 'resources/js/site/main.js',
+                dest: 'www/compiled/js',
+                outputName: 'site.js',
+                basedir: cwd,
+                paths: [
+                    cwd + '/resources'
+                ]
+            }
         ]
     },
 

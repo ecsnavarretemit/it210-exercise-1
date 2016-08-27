@@ -41,6 +41,7 @@ export let config = {
                 'resources/dependencies/jquery/dist/jquery.js',
                 'resources/dependencies/lodash/dist/lodash.js',
                 'resources/dependencies/bootstrap-sass/assets/javascripts/bootstrap.js',
+                'resources/dependencies/jquery.scrollTo/jquery.scrollTo.js',
                 'resources/dependencies/jquery-mousewheel/jquery.mousewheel.js',
                 'resources/dependencies/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js'
             ],

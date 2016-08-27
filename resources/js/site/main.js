@@ -21,6 +21,7 @@ jQuery( window ).on( 'load', () => {
     let browserWindow = $( window );
     let editorBody    = $( '.editor__body' );
     let editorTabs    = editorBody.children( '.editor__tabs' );
+    let navbar        = $( '.editor__menu' ).find( '.navbar-nav' );
     // [Global Elements] ::end
 
     {
@@ -42,6 +43,18 @@ jQuery( window ).on( 'load', () => {
                 }
             }
         };
+
+        navbar.on( 'click.scrollToSection', '.link--scrollable', function(e) {
+            var anchor = $( this ),
+                href   = anchor.attr( 'href' );
+
+            // prevent default browser behavior
+            e.preventDefault();
+
+            $.scrollTo( href, 500, {
+                offset: -50
+            });
+        });
 
         browserWindow.on( 'resize.toggleScrollbar', lodash.debounce(function() {
             let win = $( this );

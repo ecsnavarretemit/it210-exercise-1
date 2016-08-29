@@ -330,9 +330,17 @@ jQuery( document ).ready(($) => {
             // prevent default browser behavior
             e.preventDefault();
         })
-        .on( 'click.closeFile', '.nav-tabs__item .nav-tabs__item__icon', function() {
+        .on( 'click.closeFile', '.nav-tabs__item .nav-tabs__item__icon', function(e) {
             let anchor = $( this ).parent( 'a' );
             let item   = anchor.parent( '.nav-tabs__item' );
+
+            // prenvent event propagation
+            e.stopPropagation();
+
+            // prevent default browser behavior
+            e.preventDefault();
+
+            window.console.log( item );
 
             let associatedItem = helpers.getAssociatedItemByHref( anchor.attr("href") );
 

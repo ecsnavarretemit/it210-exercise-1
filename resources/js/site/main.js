@@ -339,8 +339,6 @@ jQuery( document ).ready(($) => {
             // prevent default browser behavior
             e.preventDefault();
 
-            window.console.log( item );
-
             let associatedItem = helpers.getAssociatedItemByHref( anchor.attr("href") );
 
             if ( associatedItem.length > 0 ) {

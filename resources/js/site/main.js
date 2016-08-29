@@ -310,8 +310,7 @@ jQuery( document ).ready(($) => {
                 // trigger the close tab event on the corresponding tab.
                 if ( isTabOpen ) {
                     editorTabs
-                        .children( '.nav-tabs' )
-                        .find( 'a' )
+                        .find( '.nav-tabs a' )
                         .filter( `[href="${anchor.attr("href")}"]` )
                         .children( '.nav-tabs__item__icon' )
                         .trigger( 'click.closeFile' )
@@ -330,9 +329,15 @@ jQuery( document ).ready(($) => {
             // prevent default browser behavior
             e.preventDefault();
         })
-        .on( 'click.closeFile', '.nav-tabs__item .nav-tabs__item__icon', function() {
+        .on( 'click.closeFile', '.nav-tabs__item .nav-tabs__item__icon', function(e) {
             let anchor = $( this ).parent( 'a' );
             let item   = anchor.parent( '.nav-tabs__item' );
+
+            // prenvent event propagation
+            e.stopPropagation();
+
+            // prevent default browser behavior
+            e.preventDefault();
 
             let associatedItem = helpers.getAssociatedItemByHref( anchor.attr("href") );
 
@@ -345,8 +350,7 @@ jQuery( document ).ready(($) => {
                 // trigger the close tab event on the corresponding tab.
                 if ( isFileOpen ) {
                     openedFiles
-                        .children( '.list' )
-                        .find( '.link' )
+                        .find( '.list .link' )
                         .filter( `[href="${anchor.attr("href")}"]` )
                         .children( '.link__icon' )
                         .trigger( 'click.closeFile' )
@@ -369,6 +373,9 @@ jQuery( document ).ready(($) => {
 
             // open the tab that preceded by the removed tab
             helpers.openTab( anchorTabs.eq(prevIdx).attr('href') );
+
+            // resize or remove the scrollbar on tab item removal.
+            browserWindow.trigger( 'resize.toggleTabScrollbar' );
         })
         ;
 

@@ -305,12 +305,20 @@
                                     <section class="topic__container">
                                         <h2 class="topic__title">Discuss HTTP Status Codes</h2>
 
-                                        <p class="text">
-                                            In HTTP/1.0 and since, the first line of the HTTP response is called the status line and includes a numeric status code (e.g 404)
-                                            and a textual reason phrase (such as "Not Found"). The way the user agent handles the response primarily depends on the code and
-                                            secondarily on the other response header fields. Custom status codes can be used since, if the user agent encounters a code it
-                                            does not recognize, it can use the first digit of the code to determine the general class of the response.
-                                        </p>
+                                        <div class="text-group">
+                                            <p>
+                                                In HTTP/1.0 and since, the first line of the HTTP response is called the status line and includes a numeric status code (e.g 404)
+                                                and a textual reason phrase (such as "Not Found"). The way the user agent handles the response primarily depends on the code and
+                                                secondarily on the other response header fields. Custom status codes can be used since, if the user agent encounters a code it
+                                                does not recognize, it can use the first digit of the code to determine the general class of the response.
+                                            </p>
+
+                                            <p>
+                                                Basically, it indicates whether a specific HTTP request has been successfully completed.
+                                                Responses are grouped in five classes: informational responses, successful responses, redirects,
+                                                client errors, and servers errors.
+                                            </p>
+                                        </div>
 
                                         <!-- [HTTP Status Codes - 1xx] ::start -->
                                         <section id="http-status-codes-1xx" class="topic__child">

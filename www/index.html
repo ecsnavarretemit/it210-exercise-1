@@ -327,15 +327,15 @@
                                             <dl class="datalist">
                                                 <dt class="datalist__term">100 Continue</dt>
                                                 <dd class="datalist__definition">
-                                                    The server has received the request headers and the client should proceed to send the request body (in the case of a request for
-                                                    which a body needs to be sent; for example, a POST request). Sending a large request body to a server after a request has been
-                                                    rejected for inappropriate headers would be inefficient. To have a server check the request's headers, a client must send
-                                                    Expect: 100-continue as a header in its initial request and receive a 100 Continue status code in response before sending the body.
-                                                    The response 417 Expectation Failed indicates the request should not be continued.
+                                                    This interim response indicates that everything so far is OK and that the client should continue with the request or ignore
+                                                    it if it is already finished.
                                                 </dd>
 
                                                 <dt class="datalist__term">101 Switching Protocols</dt>
-                                                <dd class="datalist__definition">The requester has asked the server to switch protocols and the server has agreed to do so.</dd>
+                                                <dd class="datalist__definition">
+                                                    This code is sent in response to an Upgrade: request header by the client, and indicates that the protocol the server is switching too.
+                                                    It was introduced to allow migration to an incompatible protocol version, and is not in common use.
+                                                </dd>
 
                                                 <dt class="datalist__term">102 Processing (WebDAV; <abbr title="Request for Comments">RFC</abbr> 2518)</dt>
                                                 <dd class="datalist__definition">
@@ -354,13 +354,27 @@
                                             <dl class="datalist">
                                                 <dt class="datalist__term">200 OK</dt>
                                                 <dd class="datalist__definition">
-                                                    Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request,
-                                                    the response will contain an entity corresponding to the requested resource. In a POST request, the response will contain an
-                                                    entity describing or containing the result of the action.
+                                                    <p>The request has succeeded. The meaning of a success varies depending on the HTTP method:</p>
+
+                                                    <dl class="datalist dl-horizontal">
+                                                        <dt class="datalist__term">GET</dt>
+                                                        <dd class="datalist__definition">The resource has been fetched and is transmitted in the message body.</dd>
+
+                                                        <dt class="datalist__term">HEAD</dt>
+                                                        <dd class="datalist__definition">The entity headers are in the message body.</dd>
+
+                                                        <dt class="datalist__term">POST</dt>
+                                                        <dd class="datalist__definition">The resource describing the result of the action is transmitted in the message body.</dd>
+
+                                                        <dt class="datalist__term">TRACE</dt>
+                                                        <dd class="datalist__definition">The message body contains the request message as received by the server</dd>
+                                                    </dl>
                                                 </dd>
 
                                                 <dt class="datalist__term">201 Created</dt>
-                                                <dd class="datalist__definition">The request has been fulfilled, resulting in the creation of a new resource.</dd>
+                                                <dd class="datalist__definition">
+                                                    The request has succeeded and a new resource has been created as a result of it. This is typically the response sent after a PUT request.
+                                                </dd>
 
                                                 <dt class="datalist__term">202 Accepted</dt>
                                                 <dd class="datalist__definition">
@@ -390,10 +404,16 @@
                                                 </dd>
 
                                                 <dt class="datalist__term">207 Multi-Status (WebDAV; RFC 4918)</dt>
-                                                <dd class="datalist__definition">The message body that follows is an XML message and can contain a number of separate response codes, depending on how many sub-requests were made.</dd>
+                                                <dd class="datalist__definition">
+                                                    The message body that follows is an XML message and can contain a number of separate response codes,
+                                                    depending on how many sub-requests were made.
+                                                </dd>
 
                                                 <dt class="datalist__term">208 Already Reported (WebDAV; RFC 5842)</dt>
-                                                <dd class="datalist__definition">The members of a DAV binding have already been enumerated in a previous reply to this request, and are not being included again.</dd>
+                                                <dd class="datalist__definition">
+                                                    The members of a DAV binding have already been enumerated in a previous reply to this request,
+                                                    and are not being included again.
+                                                </dd>
 
                                                 <dt class="datalist__term">226 IM Used (RFC 3229)</dt>
                                                 <dd class="datalist__definition">
@@ -478,7 +498,8 @@
                                                 <dd class="datalist__definition">
                                                     Similar to 403 Forbidden, but specifically for use when authentication is required and has failed or has not yet been provided.
                                                     The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.
-                                                    See Basic access authentication and Digest access authentication.[36] 401 semantically means "unauthenticated", i.e. the user does not have the necessary credentials.
+                                                    See Basic access authentication and Digest access authentication.
+                                                    401 semantically means "unauthenticated", i.e. the user does not have the necessary credentials.
                                                 </dd>
 
                                                 <dt class="datalist__term">402 Payment Required</dt>
@@ -495,7 +516,10 @@
                                                 </dd>
 
                                                 <dt class="datalist__term">404 Not Found</dt>
-                                                <dd class="datalist__definition">The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.</dd>
+                                                <dd class="datalist__definition">
+                                                    The requested resource could not be found but may be available in the future.
+                                                    Subsequent requests by the client are permissible.
+                                                </dd>
 
                                                 <dt class="datalist__term">405 Method Not Allowed</dt>
                                                 <dd class="datalist__definition">
@@ -504,7 +528,9 @@
                                                 </dd>
 
                                                 <dt class="datalist__term">406 Not Acceptable</dt>
-                                                <dd class="datalist__definition">The requested resource is capable of generating only content not acceptable according to the Accept headers sent in the request.</dd>
+                                                <dd class="datalist__definition">
+                                                    The requested resource is capable of generating only content not acceptable according to the Accept headers sent in the request.
+                                                </dd>
 
                                                 <dt class="datalist__term">407 Proxy Authentication Required (RFC 7235)</dt>
                                                 <dd class="datalist__definition">The client must first authenticate itself with the proxy.</dd>
@@ -516,7 +542,10 @@
                                                 </dd>
 
                                                 <dt class="datalist__term">409 Conflict</dt>
-                                                <dd class="datalist__definition">Indicates that the request could not be processed because of conflict in the request, such as an edit conflict between multiple simultaneous updates.</dd>
+                                                <dd class="datalist__definition">
+                                                    Indicates that the request could not be processed because of conflict in the request,
+                                                    such as an edit conflict between multiple simultaneous updates.
+                                                </dd>
 
                                                 <dt class="datalist__term">410 Gone</dt>
                                                 <dd class="datalist__definition">

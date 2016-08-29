@@ -375,6 +375,9 @@ jQuery( document ).ready(($) => {
 
             // open the tab that preceded by the removed tab
             helpers.openTab( anchorTabs.eq(prevIdx).attr('href') );
+
+            // resize or remove the scrollbar on tab item removal.
+            browserWindow.trigger( 'resize.toggleTabScrollbar' );
         })
         ;
 
